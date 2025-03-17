@@ -1,0 +1,280 @@
+
+
+/*Step 1: Define my ainimation and then use the #logo to specifi the duration */
+
+@keyframes logo_animation{
+
+    from{
+
+        width:25px;
+        opacity: 0;
+
+    }
+
+    to{
+
+        width: 475px;
+        opacity: 1;
+
+    }
+
+}
+
+
+#logo{
+
+    animation: logo_animation 5s;
+
+}
+
+/*step 2: add fonts and background color/img to body*/
+
+body{
+    font-family: "Poppins", serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+/*step 3: make our headers have a flex display and align our headers to match the screenshot*/
+
+header{
+
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+
+}
+
+/*step 4: make the links in the navigation be displayed as flex*/
+
+.nav_links{
+
+    display:flex;
+    flex-direction: column;
+
+}
+
+/*step 5: make the links the same color even after being visited*/
+
+a{
+
+    color: #077BFF;
+
+}
+
+a:visited{
+
+    color: #077BFF;
+
+}
+
+
+
+/*Step 6: follow the spec to style the header elements that are direct children of the child class*/
+
+.card > header{
+
+    background-color: #288088;
+    padding: 20px 0;
+    border: solid 2px #45ADAD;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    
+}
+
+
+
+/* Step 7/8 make it so that the pricing container is a flex and make sure it is centered with a minumimum size of 450px. Make it so that the content wraps to a newline*/
+ 
+.pricing{
+
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+
+    flex-basis: 450px;
+
+}
+
+
+/*step 9: style the gallery class to match the spec include the border, width and margin */
+.gallery img{
+
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+
+}
+
+/*step 10: style the gallery class to use flex. This combination matches it to the screenshot */
+
+.gallery{
+
+
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 900px){
+
+
+    /*step 11 make it so that header items are row based so that our nav tab goes up top.
+     also make it so that elements are flexed based on the row, allowing them to align to the left*/
+
+    header{
+
+       flex-direction: row;
+       justify-content: space-between
+
+    }
+
+    .nav_links{
+
+        align-items: flex-end;
+        flex-direction:row;
+
+    }
+
+
+    /*Step 12: modify card so that it has a maximum width of 275px. 0 means it wont grow 1 means it can shrink and 275px is the maximum size*/
+
+    .card{
+
+        flex: 0 1 275px;
+
+    }
+
+    /*step 13: Make ONLY the first header scroll with you  */
+
+    header:first-of-type {
+ 
+        position:sticky;
+        top:0;
+       
+    }
+
+    #skip header{
+
+        position: relative;
+
+    }
+
+   
+
+}
+
+/*step 14 set reduced motion perameters*/
+
+@media screen and (prefers-reduced-motion: reduce){
+
+    img{
+
+        animation-duration: .001ms;
+
+    }
+
+
+}
+
+
+@media print {
+
+
+    /*Step 15/16 change the body font and remove background image */
+
+    body{
+
+        font-family: Arial , Helvetica;
+        background-image:none;
+
+    }
+
+
+    /*step 17: Make it so that the nav bar is under the logo, then make sure the nav takes up the whole width, finally space the content in the nav bar around.*/
+ 
+    header{
+
+        flex-direction: column;
+
+    }
+    
+    nav{
+
+        width:100%;
+
+    }
+
+    .nav_links{
+
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+    }
+
+    /*Step 18: align elements along the bottom*/
+
+    .pricing{
+
+        align-items:flex-end;
+        flex-wrap: nowrap;
+
+    }
+
+    /*step 19: style the card elements according to spec*/
+
+    .card{
+
+        border:2px solid #45ADDD;
+        flex-basis: 325px;
+        
+
+    }
+
+
+    /*step 20 completely hide the gallery items*/
+    .gallery{
+
+        display:none;
+
+    }
+
+    #gallery{
+
+        display:none;
+
+    }
+
+    /*step 21: add thumbs up emoji*/
+
+    .card:after{
+
+        content: "👍";
+
+    }
+
+}
+
+
+
+
+
+   
+
+
+
+
+
